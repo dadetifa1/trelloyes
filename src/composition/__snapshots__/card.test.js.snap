@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component renders the UI as expected 1`] = `
+<cardClass
+  content="Test Content"
+  title="Test title"
+/>
+`;
+
+exports[`Card component renders the UI as expected with no unreads 1`] = `
+<cardClass
+  content=""
+  title=""
+/>
+`;
