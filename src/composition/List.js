@@ -12,8 +12,8 @@ class ListClass extends React.Component{
         ],
     };
     render(){
-        const cardList = this.props.cards.map(function(card) {
-            return <CardClass key={card.id} title={card.title} content={card.content} />
+        const cardList = this.props.cards.map((card) => {
+            return <CardClass key={card.id} cardId={card.id} listHeader={this.props.header} onAddItem={this.props.onAddItem} title={card.title} content={card.content} />
         });
 
         return(
@@ -24,6 +24,12 @@ class ListClass extends React.Component{
                 <div className="List-cards">
                     {cardList}
                 </div>
+                <button
+                    type='button'
+                    className='List-add-button'
+                    onClick={() => this.props.onClickAdd(this.props.id)}>
+                    + Add Random Card
+                </button>
             </section>
         )
     }

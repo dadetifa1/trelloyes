@@ -18,7 +18,7 @@ describe('Card component', () => {
     expect(tree).toMatchSnapshot();  
   });
 
-  it('renders the UI as expected with no unreads', () => {
+  it('renders the UI as expected with no prop values', () => {
     const tree = renderer
       .create(<cardClass title="" content=""/>)
       .toJSON();

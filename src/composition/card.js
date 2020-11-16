@@ -10,7 +10,7 @@ class cardClass extends React.Component {
     render() {
         return (
             <div className="Card">
-                <button type="button">delete</button>
+                <button type="button" onClick={() => this.props.onAddItem(this.props.listHeader, this.props.cardId)}>delete</button>
                 <h3>{this.props.title}</h3>
                 <p>{this.props.content}</p>
           </div>
