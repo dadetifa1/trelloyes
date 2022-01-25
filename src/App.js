@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import List from "./List";
 
-function App() {
+function App(params) {
+  let listA = params.store.lists.map((item) => {
+    return (
+      <List
+        key={item.id}
+        header={item.header}
+        cards={item.cardIds.map((cardId) => params.store.allCards[cardId])}
+      />
+    );
+  });
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Top app in da house</h1>
       </header>
+      <div className="App-list">{listA}</div>
     </div>
   );
 }
